@@ -14,6 +14,9 @@ class Server extends Daemon {
 	public function run() {
 		// Le code qui s'exécute infiniment
 		echo "On tourne !\n";
+
+		$this -> socketConnexion();
+
 		sleep ( 5 );
 	}
 	public function onStart() {
@@ -26,7 +29,7 @@ class Server extends Daemon {
 		echo "Signal non géré par la classe Daemon : " . $signal . "\n";
 	}
 
-	public function manageSocket() {
+	public function socketConnexion() {
 		if (($socket = socket_create ( AF_INET, SOCK_STREAM, SOL_TCP )) == FALSE) {
 			echo "socket_create_listen() a échoué : " . socket_strerror ( socket_last_error ($socket) ) . "\n";
 			exit ( 1 );
