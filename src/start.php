@@ -10,7 +10,8 @@ function register($class) {
   }
 }
 
-spl_autoload_register("register");
+// spl_autoload_register("register");
+include_once("classes/Server.class.php");
 
 new Server();
 ?>

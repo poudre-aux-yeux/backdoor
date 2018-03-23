@@ -1,4 +1,6 @@
 <?php
+include_once("Daemon.class.php");
+
 class Server extends Daemon {
 	public function __construct() {
 		// Ici on souhaite gérer les signaux SIGUSR1 et SIGUSR2 en plus
