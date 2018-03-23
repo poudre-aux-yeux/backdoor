@@ -2,6 +2,6 @@
 
 ## Commande pour lancer le serveur
 
-```cmd
+```sh
     php ./src/start.php
 ```
