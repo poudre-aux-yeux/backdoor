@@ -19,13 +19,11 @@
 
 ## Initialisation du projet
 
-- `cd /home/osboxes/Documents/`
-- `git clone http://github.com/poudre-aux-yeux/blackdoor`
-- `cd /blackdoor/`
+- Aller dans le dossier où on importe le projet : `cd /home/osboxes/Documents/`
+- Cloner le dossier depuis le lien GitHub : `git clone http://github.com/poudre-aux-yeux/blackdoor`
+- Naviguer dans le dossier du projet : `cd /blackdoor/`
 
 ## Commande pour lancer le serveur
 
-```sh
-    php ./src/start.php
-```
-
+- Lancer le serveur : `php .\src\start.php`
+- Arrêter le serveur : 
