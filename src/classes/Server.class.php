@@ -15,15 +15,14 @@ class Server extends Daemon {
 	public function run() {
 		// Le code qui s'exécute infiniment
 		echo "On tourne autour du pot !\n";
-		$this -> socketConnexion();
+		// $this -> socketConnexion();
 		sleep ( 5 );
 	}
 
 	public function onStart() {
 		echo "Démarrage du processus avec le pid " . getmypid () . "\n";
 	}
-
-	public function onStop() {
+	public function onStop() { 
 		echo "Arrêt du processus avec le pid " . getmypid () . "\n";
 	}
 	
@@ -34,6 +33,11 @@ class Server extends Daemon {
 	public function socketConnexion() {
 		if (($socket = socket_create ( AF_INET, SOCK_STREAM, SOL_TCP )) == FALSE) {
 			echo "socket_create_listen() a échoué : " . socket_strerror ( socket_last_error ($socket) ) . "\n";
+			exit ( 1 );
+		}
+		// Modification de l'option SO_REUSEADDR à la valeur 1 !
+		if (!socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, 1)) {
+			echo 'Impossible de définir l\'option du socket : '. socket_strerror(socket_last_error($socket)) . "\n";
 			exit ( 1 );
 		}
 		if(socket_bind ( $socket, "127.0.0.1", 1234 )==FALSE){

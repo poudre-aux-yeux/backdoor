@@ -27,3 +27,8 @@
 
 - Lancer le serveur : `php .\src\start.php`
 - Arrêter le serveur : 
+
+## Coté client
+
+- Tester telnet : `telnet 127.0.0.1 1234`
+- Quitter telnet : `Ctrl + $` puis taper `telnet> quit`
