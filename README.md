@@ -26,7 +26,7 @@
 ## Commande pour lancer le serveur
 
 - Lancer le serveur : `php .\src\start.php`
-- Arrêter le serveur : 
+- Arrêter le serveur : `Ctrl + C`
 
 ## Coté client
 

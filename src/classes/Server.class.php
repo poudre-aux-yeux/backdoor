@@ -48,10 +48,28 @@ class Server extends Daemon {
 			echo "socket_listen() a échoué : " . socket_strerror ( socket_last_error ($socket) ) . "\n";
 			exit ( 1 );
 		}
-		while ( $c = socket_accept ( $socket ) ) {
-			while ( $c !== FALSE ) {
+		// Passage en mode non bloquant de la socket du serveur
+		socket_set_nonblock ( $socket );
+		$clients = array ();
+		while ( TRUE ) {
+			if ($c = socket_accept ( $socket )) {
+				// Passage en mode non bloquant de la socket du client
+				socket_set_nonblock ( $c );
+				// Ajout de la socket cliente au tableau
+				$clients [] = $c;
+			}
+			// On répond au clients qui ont envoyés un message
+			for($i = 0; $i < sizeof ( $clients ); $i ++) {
+				$c = $clients [$i];
 				if ($buf = socket_read ( $c, 2048 )) {
-					socket_write ( $c, "You said : ".$buf );
+					socket_write ( $c, "You said : " . $buf );
+				}
+			}
+			// On efface les sockets fermées
+			for($i = 0; $i < sizeof ( $clients ); $i ++) {
+				$c = $clients [$i];
+				if ($c == FALSE) {
+					$clients = array_splice ( $clients, $i, 1 );
 				}
 			}
 		}
