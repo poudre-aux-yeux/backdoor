@@ -38,7 +38,7 @@ class Server extends Daemon {
 			echo "socket_create_listen() a échoué : " . socket_strerror ( socket_last_error ($socket) ) . "\n";
 			exit ( 1 );
 		}
-		if(socket_bind ( $socket, "127.0.0.1", 1234 )==FALSE){
+		if(@socket_bind ( $socket, "127.0.0.1", 1234 )==FALSE){
 			echo "socket_bind() a échoué : " . socket_strerror ( socket_last_error ($socket) ) . "\n";
 			exit ( 1 );
 		}
