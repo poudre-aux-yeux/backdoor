@@ -72,6 +72,7 @@ class Server extends Daemon {
 					$clients = array_splice ( $clients, $i, 1 );
 				}
 			}
+		usleep(500);
 		}
 		socket_close ( $socket );
 	}
