@@ -47,7 +47,7 @@ class Server extends Daemon {
 		if(socket_listen ( $socket )==FALSE){
 			echo "socket_listen() a échoué : " . socket_strerror ( socket_last_error ($socket) ) . "\n";
 			exit ( 1 );
-		}
+		}/*
 		// Passage en mode non bloquant de la socket du serveur
 		socket_set_nonblock ( $socket );
 		$clients = array ();
@@ -73,7 +73,7 @@ class Server extends Daemon {
 				}
 			}
 		usleep(500);
-		}
+		}*/
 		socket_close ( $socket );
 	}
 }
