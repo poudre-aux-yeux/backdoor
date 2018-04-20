@@ -47,7 +47,11 @@ class Server extends Daemon {
 			exit ( 1 );
 		}
 		while ( $c = socket_accept ( $socket ) ) {
-			/* Traiter la requête entrante */
+			while ( $c !== FALSE ) {
+				if ($buf = socket_read ( $c, 2048 )) {
+					socket_write ( $c, "You said : ".$buf );
+				}
+			}
 		}
 		socket_close ( $socket );
 	}
