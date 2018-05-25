@@ -23,12 +23,21 @@
 - Cloner le dossier depuis le lien GitHub : `git clone http://github.com/poudre-aux-yeux/blackdoor`
 - Naviguer dans le dossier du projet : `cd /blackdoor/`
 
+# TP 1
+
 ## Commande pour lancer le serveur
 
-- Lancer le serveur : `php .\src\start.php`
+- Lancer le serveur : `php ./src/start.tp1.php`
 - Arrêter le serveur : `Ctrl + C`
 
 ## Coté client
 
 - Tester telnet : `telnet 127.0.0.1 1234`
 - Quitter telnet : `Ctrl + $` puis taper `telnet> quit`
+
+# TP 2
+
+## Commande pour lancer le serveur
+
+- Lancer le serveur : `php ./src/start.tp2.php`
+- Arrêter le serveur : `Ctrl + C`
