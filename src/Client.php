@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: lucas
- * Date: 23/03/18
- * Time: 10:49
- */
 
 class Client
 {

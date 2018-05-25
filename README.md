@@ -27,7 +27,7 @@
 
 ## Commande pour lancer le serveur
 
-- Lancer le serveur : `php ./src/start.tp1.php`
+- Lancer le serveur : `php ./src/start.php`
 - Arrêter le serveur : `Ctrl + C`
 
 ## Coté client
