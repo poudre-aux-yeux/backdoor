@@ -16,7 +16,7 @@ class Server extends Daemon {
 		// Le code qui s'exécute infiniment
 		echo "On tourne autour du pot !\n";
 		// $this -> socketConnexion();
-		sleep ( 20 );
+		sleep ( 5 );
 	}
 
 	public function onStart() {

@@ -12,7 +12,7 @@ function register($class) {
 
 spl_autoload_register("register");
 include_once('classes/Daemon.class.php');
-include_once('classes/Server.class.php');
+include_once('classes/Server.class.tp2.php');
 
 new Server();
 ?>
